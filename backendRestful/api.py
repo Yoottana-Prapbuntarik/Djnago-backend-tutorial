@@ -1,6 +1,8 @@
-from backendRestful.models import Allproduct, UserAuth
+from backendRestful.models import Allproduct
 from rest_framework import viewsets, permissions
-from .serializers import AllproductSerializer, UserSerializer 
+from rest_framework.response import Response
+from .serializers import AllproductSerializer 
+
 # Viewset 
 class AllproductViewSet(viewsets.ModelViewSet):
     queryset = Allproduct.objects.filter(published=True)
@@ -8,10 +10,3 @@ class AllproductViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = AllproductSerializer
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = UserAuth.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
-    serializer_class = UserSerializer

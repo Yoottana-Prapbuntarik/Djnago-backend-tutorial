@@ -8,13 +8,4 @@ class Allproduct(models.Model):
     pub_date = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.product_name
-
-class UserAuth(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=255)
-    pub_date = models.DateTimeField(auto_now=True)
-    def __str__(self):
-        return self.first_name
     
