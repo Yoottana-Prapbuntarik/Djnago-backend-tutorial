@@ -14,10 +14,10 @@ class AllproductViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         req = self.request
+        queryset = super().get_queryset()
         product_type = req.query_params.get('type')
         if product_type:
-            self.queryset = Allproduct.objects.filter(product_name=product_type)
-            return self.queryset
+            return queryset.filter(product_name=product_type)
         else:
-            return self.queryset
+            return queryset
     serializer_class = AllproductSerializer
