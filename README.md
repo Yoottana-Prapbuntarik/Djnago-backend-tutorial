@@ -1,1 +1,1 @@
-# Djnago-backend-tutorial # [https://fb.com/nap2539]
+# Djnago-backend-tutorial # [fb.com/nap2539]
